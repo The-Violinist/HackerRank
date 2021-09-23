@@ -1,3 +1,4 @@
+# Return how many combinations match: consecutive items in array (m) give result (d)
 s = [1, 2, 1, 3, 2]
 d = 3
 m = 2
@@ -10,5 +11,6 @@ def birthday(s, d, m):
         i +=1
         if total == d:
             correct += 1
-    return correct
+    print(correct)
+    # return correct
 birthday(s, d, m)
