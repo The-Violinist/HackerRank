@@ -1,6 +1,6 @@
 s = [1, 2, 1, 3, 2]
 d = 3
-m = 3
+m = 2
 def birthday(s, d, m):
     correct = 0
     length = (len(s)-m)
