@@ -14,4 +14,4 @@ def breakingRecords(scores):
             lowest += 1
     records = [highest, lowest]
     return records
-breakingRecords(scores)
+print(breakingRecords(scores))
