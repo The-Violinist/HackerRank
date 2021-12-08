@@ -1,3 +1,5 @@
+#HackerRank: Between Two Sets
+#Determines numbers between 2 lists of which list "a" are factors and are also factors of list "b" 
 a = [3,4]
 b = [24, 48]
 
