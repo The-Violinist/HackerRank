@@ -20,8 +20,6 @@ def find_pairs(n, ar):
         elif x not in ar[1:]:
             del ar[0]
             return 0
-        else:
-            continue
 
 #Check if there are any duplicates
 def checkIfDuplicates(listOfElems):
@@ -33,14 +31,12 @@ def checkIfDuplicates(listOfElems):
 def sockMerchant(n, ar):
     total_pairs = 0
     while True:
-        print(len(ar))
         if len(ar) == 0:
             break
         elif len(ar) > 1:
             result = checkIfDuplicates(ar)
             if result == True:
                 total_pairs += find_pairs(len(ar),ar)
-                print(f"{total_pairs} total pairs")
             else:
                 break
         else:
