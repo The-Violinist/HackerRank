@@ -1,4 +1,4 @@
-# 
+# Determine how many people will have liked an ad after n days
 
 n = 5
 
