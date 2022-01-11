@@ -1,6 +1,6 @@
 a = [3,4,5]
 k = 1 # number of rotations
-queries = [1,2] # indeces of number queries after rotations
+queries = [0,1,2] # indeces of number queries after rotations
 
 def circularArrayRotation(a, k, queries):
     # Find the relative placement difference in the array
