@@ -1,7 +1,7 @@
 import math
 
 a = 24
-b = 49
+b = 121
 
 def squares(a, b):
     # Find the lower square root number
@@ -16,6 +16,8 @@ def squares(a, b):
     num_list = []
     for num in range(start, end + 1):
         num_list.append(num)
-    return len(num_list)
-
-print(squares(a,b))
+    return num_list
+x = squares(a, b)
+print(f"There are {len(x)} numbers between (inclusive) {a} and {b} which have integers square roots.\nThe square roots are: ", end = "")
+for item in x:
+    print(f"{item}  ", end = "")
