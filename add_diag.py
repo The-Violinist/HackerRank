@@ -1,28 +1,30 @@
-# "a" is a 2d array. This function adds the diagonals and finds the absolute difference.
+# Diagonal Difference
+# https://www.hackerrank.com/challenges/diagonal-difference
+# "a" is a 2d array. This function sums the diagonals and finds the absolute difference.
+# Assumes that the input ('a') is an array of arrays where the lenght of each array is the same as the total number of arrays, thereby creating a square of integers. 
 # 11-23-2020
 
 import itertools
+
+# Sample 2d array stacked top to bottom
 a = ([1, 3, 6],[2, 2, 4],[8, 3, 1])
-b = len(a)
-c = b - 1
+
 def diagonalDifference(arr):
-    place_asc = 0
-    total_asc = 0
+    place_forward = 0                                               # Starting point  of forward descending diagonal (top left to lower right) 
+    total_forward = 0                                               # Sum of values for the forward diagonal
+    # Increment index by 1 for each group in 'a' to find the diagonal values
     for group in arr:
-        #Add diagonal from top left
-        #group1[0]+group2[1]+group3[2]
-        total_asc = total_asc + group[place_asc]
-        place_asc += 1
+        total_forward = total_forward + group[place_forward]        # Sum the diagonal integers from top left
+        place_forward += 1                                          # Move the index forward by 1
     
-    #Set starting point for 
-    place_desc = c
-    total_desc = 0
+    #Set starting point for retrograde descending diagonal (top right to lower left). This is the last index.
+    place_retro = len(arr) -1
+    total_retro = 0                                                 # Sum of values for the retrograde diagonal
     for group in arr:
-        #Add diagonal from top right
-        #group1[2]+group2[1]+group3[0]
-        total_desc = total_desc + group[place_desc]
-        place_desc -= 1
-    difference = int(abs(total_asc - total_desc))
-    print(difference)
+        total_retro = total_retro + group[place_retro]              # Sum the diagonal integers from top right
+        place_retro -= 1                                            # Move the index back by 1
+    
+    # Calculate the absolute difference between the 2 diagonals
+    difference = int(abs(total_forward - total_retro))
     return difference
-diagonalDifference(a)
+print(diagonalDifference(a))
