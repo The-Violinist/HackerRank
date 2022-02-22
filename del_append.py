@@ -1,12 +1,14 @@
+# Append and Delete
+# https://www.hackerrank.com/challenges/append-and-delete
+# Determine if string 's' can be converted to string 't' through deletion and appending using the exact number of edits 'k'
+
 s = "aaa"
 t = "a"
 k = 5
 
 def appendAndDelete(s, t, k):
-    # Write your code here
     same = 0
     i = 0
-    len_str = 0
     if len(s) > len(t): len_str = len(t) - 1
     else: len_str = len(s) - 1
 

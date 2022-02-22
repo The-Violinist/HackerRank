@@ -1,11 +1,13 @@
-#HackerRank: Between Two Sets
-#Determines numbers between 2 lists of which list "a" are factors and are also factors of list "b" 
+# HackerRank: Between Two Sets
+# https://www.hackerrank.com/challenges/between-two-sets
+# Determines numbers between 2 arrays of which list "a" are factors and are also factors of array "b" 
+
 a = [3,4]
 b = [24, 48]
 
 def chk_arr_a(x):
     for item in range(0, len(a)):
-        if x%(a[item]) != 0:
+        if x % (a[item]) != 0:
             return 0
     return 1
 

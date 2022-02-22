@@ -1,24 +1,20 @@
-# Total bars that can be eaten with initial money and total wrappers to redeem
+# Chocolate Feast
+# https://www.hackerrank.com/challenges/chocolate-feast
+# A store has a promotion on chocolate; customers can redeem wrappers for more chocolate
+# Find total bars that can be eaten based on an initial amount of money and total wrappers redeemed
 
-# Money to spend
-n = 15
-# Cost per bar
-c = 3
-# Wrappers to get another bar
-m = 2
+n = 15                                              # Money to spend
+c = 3                                               # Cost per bar
+m = 2                                               # Wrappers needed to redeem a bar
 
 def chocolateFeast(n, c, m):
-    # Initial number of chocolate bars which can be eaten
-    eaten = int(n / c)
-    # Wrappers left
-    wrappers = int(n / c)
-    while True:
+    eaten = int(n / c)                              # Initial number of chocolate bars which can be eaten
+    wrappers = int(n / c)                           # Wrappers left
+    while True:                                     # Keep redeeming wrappers to get more bars
         if wrappers < m:
-            return eaten
-        # Number of bars which can be redeemed with wrappers
-        new_bars = int(wrappers / m)
-        eaten += new_bars
-        # Wrappers left over at redemption
-        wrappers = (wrappers % m) + new_bars
+            return eaten                            # Stop loop if there are not enough wrappers to redeem
+        new_bars = int(wrappers / m)                # Number of bars which can be redeemed with wrappers
+        eaten += new_bars                           # Add to total bars eaten
+        wrappers = (wrappers % m) + new_bars        # Wrappers left over at redemption
 
 print(chocolateFeast(n,c,m))
