@@ -6,7 +6,7 @@
 
 import collections
 
-arr = [1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]                     # Sample array
+arr = [1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]                     # Sample array. The values represent bird IDs
 def migratoryBirds(arr):
     occurrences = collections.Counter(arr)                  # Create a library of k,v (object value, occurences) pairs
     highest_occurrence = 0                                  # Variable to track the greatest number of occurences
@@ -15,9 +15,9 @@ def migratoryBirds(arr):
         if this_occurrence > highest_occurrence:            # If the occurences of this item are greater than the previous greatest occurence:
             highest_occurrence = this_occurrence            # Set highest occurence to this occurence
             item_id = item                                  # Set the item_id to the value of the highest occurence object
-        elif this_occurrence == highest_occurrence:         # If the occurences are the same, change the object value to the lower of the values
+        elif this_occurrence == highest_occurrence:         # If the occurences are the same, make sure that the object value is the lower of the values
             if item < item_id:
                 item_id = item
-    return item_id
+    return item_id                                          # Return the lowested numbered ID with the greatest number of occurences
 
 print(migratoryBirds(arr))

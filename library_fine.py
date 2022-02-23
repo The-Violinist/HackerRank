@@ -4,6 +4,7 @@
 # 1 year = 10000
 # Fines are given as the highest of the 3 rates and not an accumulation
 
+# Sample Data #
 # Return date:
 d1 = 2
 m1 = 7
@@ -12,6 +13,7 @@ y1 = 2014
 d2 = 1
 m2 = 1
 y2 = 2015
+# End Sample Data#
 
 def libraryFine(d1, m1, y1, d2, m2, y2):
     # Calculate differences

@@ -19,8 +19,8 @@ def circularArrayRotation(a, k, queries):
     # Create list of the elements at the indexes in 'queries' after the rotations
     query_results = []
     for item in queries:
-        num = item - diff
-        query_results.append(a[num])
+        num = item - diff                               # Find the difference in index between the original array and 'k' rotations
+        query_results.append(a[num])                    # Add the query to the results with the new index
     return query_results
 
 print(circularArrayRotation(a, k, queries))

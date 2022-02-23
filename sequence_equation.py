@@ -1,3 +1,7 @@
+# Sequence Equation
+# https://www.hackerrank.com/challenges/permutation-equation
+# Find the value of array objects where x = p(p(y))
+
 p = [5,2,1,3,4]
 def permutationEquation(p):
     y = []
