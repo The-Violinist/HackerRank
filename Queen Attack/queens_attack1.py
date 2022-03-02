@@ -14,7 +14,7 @@ n = 8                                                                   # Number
 k = 1                                                                   # Number of obstacles
 r_q = 4                                                                 # Queen's starting row
 c_q = 4                                                                 # Queen's starting column
-obstacles = [[3,5]]                                                     # Blocked positions
+obstacles = [[3,5],[2,6]]                                                     # Blocked positions
 
 
 def total_moves(r_q, c_q, n):                                           # Finds the total possible moves without blocking squares
@@ -89,11 +89,5 @@ def queensAttack(n, k, r_q, c_q, obstacles):                            # Determ
             else:
                 total -= n - obs_item[0] + 1                                # If the queen is lower than the block
     return total
-                            
-        
 
-
-
-#total_moves(r_q, c_q, n)                                                                    # Total moves
-#find_block(r_q, c_q, obstacles)
 print(queensAttack(n, k, r_q, c_q, obstacles))
