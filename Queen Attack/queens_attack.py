@@ -17,16 +17,16 @@ def find_block(r_q, c_q, n, obstacles, r, c):                                   
         position[0] = (position[0] + r)
         position[1] = (position[1] + c)
         if position in obstacles:
-            return counter, 1
+            return counter
         elif position[0] < 1 or position[0] > n or position[1] < 1 or position[1] > n:
-            return counter, 0
+            return counter
         else:
             counter +=1
 def queensAttack(n, k, r_q, c_q, obstacles):                                                # Calls the find_block function for each possible compass direction
     total = 0                                                                               # Sums the returned moves for each direction
     directions = [[1, 0],[0, 1],[-1, 0],[0, -1],[1, 1],[-1, 1],[-1, -1],[1, -1]]            # Going around the directions: N, S, E, W, NE, SE, SW, NW
     for item in directions:
-        fb_counter = (find_block(r_q, c_q, n, obstacles, item[0], item[1]))[0]              # Get number of moves for this turn
+        fb_counter = (find_block(r_q, c_q, n, obstacles, item[0], item[1]))             # Get number of moves for this turn
         total += fb_counter                                                                 # Add those moves to the total
     return total                                                                            # Return the total moves if all blocks are not encountered
 print(queensAttack(n, k, r_q, c_q, obstacles))
