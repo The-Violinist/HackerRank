@@ -3,6 +3,7 @@
 # Find the total number of moves that a queen can make given certain obstacles on the board
 # I approached this as the points on a compass and move in all 8 possible directions until reaching an obstacle
 # This is a work in progress as it returns the correct values, but times out with large data sets
+# See queens_attack2.py for the working script
 
 n = 5                                                                                       # Number of rows and columns
 k = 3                                                                                       # Number of obstacles

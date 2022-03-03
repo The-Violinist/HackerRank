@@ -2,7 +2,8 @@
 # https://www.hackerrank.com/challenges/queens-attack-2
 # Find the total number of moves that a queen can make given certain obstacles on the board
 # I approached this as the points on a compass and move in all 8 possible directions until reaching an obstacle
-# This is a work in progress as it returns the correct values, but times out with large data sets
+# This script does not work, in that it subtracts too many spaces if there are multiple obstacles in the same direction
+# This was used as the basis for queens_attack2.py by turning each conditional into its own function
 
 # n = 5                                                                 # Number of rows and columns
 # k = 3                                                                 # Number of obstacles
