@@ -55,7 +55,7 @@ def North(r_q, c_q, n, obstacles):
     blocked = 0
     for obs_item in obstacles:
         if obs_item[1] == c_q and obs_item[0] > r_q:                    # If the item is in the same column as the queen and to the north
-            if (n - obs_item[0] + 1) > blocked:                         # Return the number of blocked spaces
+            if (n - obs_item[0] + 1) > blocked:                         # Return the greatest number of blocked spaces
                 blocked = (n - obs_item[0] + 1)
     return blocked
 
@@ -64,7 +64,7 @@ def South(r_q, c_q, n, obstacles):
     blocked = 0
     for obs_item in obstacles:
         if obs_item[1] == c_q and obs_item[0] < r_q:                    # If the item is in the same column as the queen and lower
-            if obs_item[0] > blocked:                                   # Return the number of blocked spaces
+            if obs_item[0] > blocked:                                   # Return the greatest number of blocked spaces
                 blocked = obs_item[0]
     return blocked
 
@@ -73,7 +73,7 @@ def East(r_q, c_q, n, obstacles):
     blocked = 0
     for obs_item in obstacles:
         if obs_item[0] == r_q and obs_item[1] > c_q:                    # If the item is in the same row as the queen to the right
-            if (n - obs_item[1] + 1) > blocked:                         # Return the number of blocked spaces
+            if (n - obs_item[1] + 1) > blocked:                         # Return the greatest number of blocked spaces
                 blocked = (n - obs_item[1] + 1)
     return blocked
 
@@ -82,7 +82,7 @@ def West(r_q, c_q, n, obstacles):
     blocked = 0
     for obs_item in obstacles:
         if obs_item[0] == r_q and obs_item[1] < c_q:                      # If the item is in the same row as the queen and to the left
-            if obs_item[1] > blocked:                                     # Return the number of blocked spaces
+            if obs_item[1] > blocked:                                     # Return the greatest number of blocked spaces
                 blocked = obs_item[1]
     return blocked
 
@@ -101,11 +101,11 @@ def NorEast(r_q, c_q, n, obstacles):
                 else:
                     if (n - column + 1) > blocked:                      # Right side first
                         blocked = (n - column + 1)
-    return blocked
+    return blocked                                                      # Return the greatest number of blocked spaces
 
 # Finds blocked spaces to the southeast
 def SouEast(r_q, c_q, n, obstacles):
-    motion = -1                                                          # Direction of change for the column number
+    motion = -1                                                         # Direction of change for the column number
     blocked = 0
     for obs_item in obstacles:
         r_diff = obs_item[0] - r_q                                      # Find the difference between the queen starting row and the obstacle
@@ -118,7 +118,7 @@ def SouEast(r_q, c_q, n, obstacles):
                 else:
                     if (n - column + 1) > blocked:                      # Right side first
                         blocked = (n - column + 1)
-    return blocked
+    return blocked                                                      # Return the greatest number of blocked spaces
 
 # Finds blocked spaces to the southwest
 def SouWest(r_q, c_q, n, obstacles):
@@ -135,7 +135,7 @@ def SouWest(r_q, c_q, n, obstacles):
                 else:
                     if obs_item[1] > blocked:                           # Right side first
                         blocked = obs_item[1]
-    return blocked
+    return blocked                                                      # Return the greatest number of blocked spaces
 
 # Finds blocked spaces to the northwest
 def NorWest(r_q, c_q, n, obstacles):
@@ -152,7 +152,7 @@ def NorWest(r_q, c_q, n, obstacles):
                 else:
                     if obs_item[1] > blocked:                           # Right side first
                         blocked = obs_item[1]
-    return blocked
+    return blocked                                                      # Return the greatest number of blocked spaces
 
 # Main function to get the final return value (total possible moves for the queen)
 def queensAttack(n, k, r_q, c_q, obstacles):
