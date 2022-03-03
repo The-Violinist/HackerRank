@@ -154,6 +154,7 @@ def NorWest(r_q, c_q, n, obstacles):
                         blocked = obs_item[1]
     return blocked
 
+# Main function to get the final return value (total possible moves for the queen)
 def queensAttack(n, k, r_q, c_q, obstacles):
     total = total_moves(r_q, c_q, n)                                    # The total moves before any blocking spaces
     total -= North(r_q, c_q, n, obstacles)                              # Subtract all unavailable moves based on the closest obstacle to the queen in each direction
@@ -165,4 +166,6 @@ def queensAttack(n, k, r_q, c_q, obstacles):
     total -= SouWest(r_q, c_q, n, obstacles)
     total -= NorWest(r_q, c_q, n, obstacles)
     return total
+
+
 print(queensAttack(n, k, r_q, c_q, obstacles))
