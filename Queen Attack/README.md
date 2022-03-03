@@ -1,7 +1,7 @@
 
 # Queen's Attack
 
-## These are 3 iterations of the Queen's Attak solution.
+## These are 3 iterations of the Queen's Attack solution.
 
 1. queens_attack.py returns the correct values, but times out with large data sets
   - The approach is the move the queen in all 8 directions of motion until encountering an obstacle
