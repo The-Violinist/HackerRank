@@ -50,6 +50,8 @@ def total_moves(r_q, c_q, n):
     total = N+E+S+W+NE+SE+SW+NW
     return total
 
+
+
 # Finds blocked spaces to the north
 def North(r_q, c_q, n, obstacles):
     blocked = 0
