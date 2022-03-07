@@ -27,28 +27,18 @@ obstacles = [[54,87],[64,97],[42,75],[32,65],[42,87],[32,97],[54,75],[64,65],[48
 ### FUNCTIONS ###
 # Finds the total possible moves without blocking squares
 def total_moves(r_q, c_q, n):
-    N = n - r_q
-    E = n - c_q
-    S = r_q - 1
-    W = c_q - 1
-    if N > E:
-        NE = E
+    if r_q > n // 2:                                                        # Determine if the queen starting row is greater than the halfway point on the board
+        row_q = n - r_q                                                         # Assign the relative placement from the edge on a 0 point scale
     else:
-        NE = N
-    if S > E:
-        SE = E
+        row_q = r_q - 1                                                         # Assign the relative placement from the edge on a 0 point scale 
+    if c_q > n // 2:                                                        # Determine if the queen starting column is greater than the halfway point on the board
+        column_q = n - c_q                                                      # Assign the relative placement from the edge on a 0 point scale 
     else:
-        SE = S
-    if W > S:
-        SW = S
-    else:
-        SW = W
-    if N > W:
-        NW = W
-    else:
-        NW = N
-    total = N+E+S+W+NE+SE+SW+NW
-    return total
+        column_q = c_q -1                                                       # Assign the relative placement from the edge on a 0 point scale 
+    if row_q > column_q:                                                    # Determine which is further away from the edge of the board (each point towards the center adds 2 additional moves)
+        return ((n * 2) -2) + ((n - 1) + (column_q * 2))                    # The vertical and horizontal axes will always be constant, which is n*2-2 (2 is subtracted for the space taken by the queen on each axis)
+    else:                                                                       # Add to that the the horizontals, which add up to n-1 + the relative distance from the edge * 2
+        return ((n * 2) -2) + ((n - 1) + (row_q * 2))
 
 
 
