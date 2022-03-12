@@ -19,4 +19,4 @@ def divisibleSumPairs(n, k, ar):
         i1 += 1                                     # Increment the first number for the next iteration of the loop
     return matches
 
-divisibleSumPairs(n, k, ar)
+print(divisibleSumPairs(n, k, ar))
